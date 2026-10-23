@@ -6,6 +6,6 @@ WORKDIR /opt/rea
 RUN npm ci && npm run compile
 ENV REA_ROOT=/opt/rea
 WORKDIR /app
-COPY package.json server.mjs ./
+COPY worker/package.json worker/server.mjs ./
 EXPOSE 10000
 CMD ["npm","start"]
