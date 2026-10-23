@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: rea-harness-worker
+    runtime: docker
+    dockerfilePath: ./worker/Dockerfile
+    dockerContext: .
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: WORKER_TOKEN
+        sync: false
